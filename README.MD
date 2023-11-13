@@ -1,20 +1,14 @@
-Creiamo il nostro blog personale e giorno dopo giorno lo potremo arricchire con nuove funzionalità.
+Usando l’array dei post fornito con le relative immagini, creare un file di routing (routers/posts.js) che conterrà le rotte necessario per l’entità post.
 
-Creiamo il progetto base con una rotta / che ritorna un h1 con scritto Benvenuto nel mio blog!
+All’interno creare le seguenti rotte:
 
-Creiamo un array dove inserire una lista di almeno 5 post, per ognuno indicare 
-titolo, 
-contenuto, 
-immagine,
-tags (array di stringhe)
+/ - index: ritornerà un html con una ul che stamperà la lista dei post
 
-Creiamo poi una rotta /posts che ritorni tramite content negotiation la lista dei post, da un array locale. Ritorniamo i dati sotto forma di json e html stampando una semplice ul.
+/:slug - show: tramite il parametro dinamico che rappresenta lo slug del post, ritornerà un json con i dati del post
 
-Le rotte relative ai post dovranno chiamare la funzione relativa dal controller dedicato controllers/posts.js
+/create - create: ritornerà un semplice html con un h1 con scritto Creazione nuovo post e nel caso venga richiesta una risposta diversa da html lancerà un errore 406
 
-Configuriamo gli asset statici sull’applicazione in modo che si possano visualizzare le immagini associate ad ogni post.
-Testare le immagini scrivendo manualmente il link nel browser.
+/:slug/download - download: dovrà far scaricare l’immagine del post rappresentato dallo slug. Attenzione, se lo slug contiene il simbolo / la rotta non funzionerà. C’è qualche strumento che ci permette di codificare lo slug?
 
-Bonus
-Nel stampare la ul in html, si potrebbe inserire anche un tag img, la descrizione e la lista dei tag
-Spostiamo l’array dei post in un file separato da importare poi dentro il controller
+Scrivere tutte le funzioni delle rotte nel controller dedicato
+Registrare il router dentro app.js con il prefisso posts/.
