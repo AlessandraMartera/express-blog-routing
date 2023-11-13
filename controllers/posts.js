@@ -1,6 +1,6 @@
 // collego il json dei posts dentro la carte db a post.js
 const posts = require("../db/db.js");
-
+const path = require("path");
 
 // INDEx
 module.exports.index = function(req, res) {
@@ -55,4 +55,31 @@ module.exports.create = function(req, res){
         res.status(406).send("la richiesta non può essere elaborata")
     }
     
+}
+
+// /:slug/download - download: dovrà far scaricare l’immagine del post rappresentato dallo slug.
+//  Attenzione, se lo slug contiene il simbolo / la rotta non funzionerà. C’è qualche strumento che ci permette di codificare lo slug?
+module.exports.download = function(req, res){
+
+    const postSlug = req.params.slug;
+    const post = posts.find(post => post.slug === postSlug);
+
+ 
+
+    // controllo se effettivamente estiste il json che ho appena cercato 
+    if(post){   
+        const filePath = path.resolve(
+        __dirname,
+        "..",
+        "public",
+        "posts",
+        post.image
+      );
+      
+        res.download(filePath);
+    } else{
+        res.status(404).send(`<h1 style="text-align: center;"> il post relativo a ${postSlug} non è stato trovato </h1>`)
+    }    
+
+
 }
