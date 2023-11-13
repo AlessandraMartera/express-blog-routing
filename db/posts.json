@@ -1,0 +1,32 @@
+[
+    {
+      "titolo": "Viaggio nella natura",
+      "contenuto": "Esplorando foreste incontaminate e ammirando paesaggi mozzafiato.",
+      "immagine": "img/natura.jpg",
+      "tags": ["viaggio", "natura", "avventura"]
+    },
+    {
+      "titolo": "Ricetta della settimana: Pasta al pesto",
+      "contenuto": "Una deliziosa ricetta di pasta al pesto fatta in casa.",
+      "immagine": "img/pasta_pesto.jpg",
+      "tags": ["cucina", "ricette", "pasta"]
+    },
+    {
+      "titolo": "Guida allo yoga per principianti",
+      "contenuto": "Scopri i benefici dello yoga e inizia il tuo percorso di benessere.",
+      "immagine": "img/yoga.jpg",
+      "tags": ["yoga", "benessere", "salute"]
+    },
+    {
+      "titolo": "Le meraviglie dell'astronomia",
+      "contenuto": "Esplorando l'universo e le stelle che lo compongono.",
+      "immagine": "img/astronomia.jpg",
+      "tags": ["astronomia", "spazio", "stelle"]
+    },
+    {
+      "titolo": "Consigli per il successo professionale",
+      "contenuto": "Strategie e suggerimenti per raggiungere il successo nella carriera professionale.",
+      "immagine": "img/successo_professionale.jpg",
+      "tags": ["carriera", "successo", "lavoro"]
+    }
+  ]
