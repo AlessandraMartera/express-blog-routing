@@ -1,5 +1,6 @@
 // collego il json dei posts dentro la carte db a post.js
-const posts = require("../db/posts.json");
+
+const posts = require("../db/db.js");
 
 // prova di collegamento
 // posts.forEach(post => console.log(post));
@@ -22,9 +23,9 @@ module.exports.index = function(req, res) {
 
             for (const post of posts) {
                 html.push(`<li>
-                <h1>${post.titolo}</h1>
-                <img src="${post.immagine}">
-                <p>${post.contenuto}</p>
+                <h1>${post.title}</h1>
+                <img style="width: 250px;" src="/posts/${post.image}">
+                <p>${post.content}</p>
                 <ul>
                     <li>${post.tags.join(", ")}</li>
                 </ul>
