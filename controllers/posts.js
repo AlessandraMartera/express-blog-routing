@@ -30,6 +30,7 @@ module.exports.index = function(req, res) {
 // SHOW
 module.exports.show = function(req, res) {
   
+    posts.map(post => post.image_url = `/posts/${post.image}`)
    const postSlug = req.params.slug;
 
 // creo una nuova costante in cui mettere il json che mi serve
@@ -39,7 +40,9 @@ module.exports.show = function(req, res) {
 
 // controllo se effettivamente estiste il json che ho appena cercato 
    if(post){
+    post.image_url=`immagine`;
     res.json(post);
+
    } else{
     res.status(404).send(`<h1 style="text-align: center;"> il post relativo a ${postSlug} non è stato trovato </h1>`)
    }    

@@ -14,7 +14,7 @@ const routerPosts = require('./routers/posts.js');
 
 // app.get("/", home.index);
 // app.get("/posts", posts.index);
-app.use("/", routerPosts);
+app.use("/posts", routerPosts);
 
 
 
